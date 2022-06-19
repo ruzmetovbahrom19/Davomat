@@ -39,7 +39,7 @@ class MainActivity3 : AppCompatActivity() {
             dialog=builder.create()
             dialog.show()
 
-            button.setOnClickListener{
+            button.setOnClickListener {
                 var uploadkey=databaseReference.push().key.toString()
                 val pupilss=Pupils(editText.text.toString(),editText2.text.toString(),false,uploadkey)
                 databaseReference.child(uploadkey).setValue(pupilss)

@@ -52,7 +52,7 @@ class PupilAdapter constructor(
                 putExtra("surname",arrayList.get(position).surname)
 
             }
-            context.startActivities(intent)
+            context.startActivity(intent)
         }
         holder.switch.setOnClickListener {
             if (holder.switch.isChecked){

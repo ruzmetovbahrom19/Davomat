@@ -20,9 +20,6 @@ class ClassAdapter constructor(
 
     val databaseReference2=FirebaseDatabase.getInstance().getReference().child(MainActivity2.schoollname)
 
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClassViewHolder {
       val view=LayoutInflater.from(context).inflate(R.layout.classread,parent,false)
       return ClassViewHolder(view)
@@ -30,8 +27,9 @@ class ClassAdapter constructor(
     }
 
     override fun onBindViewHolder(holder: ClassViewHolder, position: Int) {
-        holder.textview1.setText("${arrayList.get(position).classnumber}-${arrayList.get(position).classcharacters} sinf")
-        holder.imageview1.setOnClickListener{
+
+        holder.textview.setText("${arrayList.get(position).classnumber}-${arrayList.get(position).classcharacters} sinf")
+        holder.imageview.setOnClickListener {
             val builder=AlertDialog.Builder(context)
             builder.setTitle("Delete Classes")
             builder.setMessage("Do you want to delete this ${arrayList.get(position).classnumber}-${arrayList.get(position).classcharacters} sinf")
@@ -39,35 +37,32 @@ class ClassAdapter constructor(
                 databaseReference2.child(arrayList.get(position).uploadkey).removeValue()
             }
             builder.setNegativeButton("No"){_,_->
-                holder.imageview1.visibility=View.INVISIBLE
+                holder.imageview.visibility=View.INVISIBLE
             }
             builder.create().show()
         }
         holder.relativelay.setOnLongClickListener{
-            holder.imageview1.visibility=View.VISIBLE
+            holder.imageview.visibility=View.VISIBLE
             return@setOnLongClickListener true
         }
-        holder.relativelay.setOnClickListener{
+        holder.relativelay.setOnClickListener {
             val intent=Intent(context,MainActivity3::class.java)
             intent.apply {
                 putExtra("classnumber",arrayList.get(position).classnumber)
                 putExtra("classcharacter",arrayList.get(position).classcharacters)
 
             }
-            context.startActivities(intent)
+            context.startActivity(intent)
         }
     }
-
-
 
     override fun getItemCount(): Int {
         return arrayList.size
     }
-
         class ClassViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
             val relativelay=itemView.findViewById<RelativeLayout>(R.id.relativelayoutclasses)
-            val textView1=itemView.findViewById<TextView>(R.id.textviewclassname)
-            val imageView1=itemView.findViewById<ImageView>(R.id.imageviewdelete2)
+            val textView=itemView.findViewById<TextView>(R.id.textviewclassname)
+            val imageView=itemView.findViewById<ImageView>(R.id.imageviewdelete2)
     }
 }

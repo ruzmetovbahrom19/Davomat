@@ -16,7 +16,7 @@ import com.google.firebase.database.*
 class MainActivity2 : AppCompatActivity() {
     lateinit var binding: ActivityMain2Binding
     lateinit var databaseReference: DatabaseReference
-    var arrayList=ArrayList<Class>()
+    var arrayList=ArrayList<Classes>()
     companion object{
         var schoollname=""
     }

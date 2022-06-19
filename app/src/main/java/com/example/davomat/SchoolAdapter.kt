@@ -31,20 +31,19 @@ class SchoolAdapter constructor(
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Delete School")
             builder.setMessage("Do you want to delete this${arrayList.get(position).schoolname}")
-            builder.setPositiveButton("Yes") { _, _ ->
+            builder.setPositiveButton("Yes") { _, _->
                 databaseReference2.child(arrayList.get(position).uploadkey).removeValue()
             }
-            builder.setNegativeButton("No"){ _, _ ->
-            holder.imageView.visibility = View.INVISIBLE
+            builder.setNegativeButton("No"){_,_->
+            holder.imageView.visibility=View.INVISIBLE
         }
             builder.create().show()
-
         }
         holder.relativelay.setOnLongClickListener{
             holder.imageView.visibility=View.VISIBLE
             return@setOnLongClickListener true
         }
-        holder.relativelay.setOnClickListener{
+        holder.relativelay.setOnClickListener {
             val intent=Intent(context,MainActivity2::class.java)
             intent.apply {
                 putExtra("name",arrayList.get(position).schoolname)
@@ -52,8 +51,6 @@ class SchoolAdapter constructor(
             context.startActivity(intent)
         }
     }
-
-
 
     override fun getItemCount(): Int {
         return arrayList.size
