@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 class ClassAdapter constructor(
     val context: android.content.Context,
     val arrayList: ArrayList<Classes>
+
     ): RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
 
     val databaseReference2=FirebaseDatabase.getInstance().getReference().child(MainActivity2.schoollname)
@@ -26,10 +27,11 @@ class ClassAdapter constructor(
 
     }
 
+
     override fun onBindViewHolder(holder: ClassViewHolder, position: Int) {
 
-        holder.textview.setText("${arrayList.get(position).classnumber}-${arrayList.get(position).classcharacters} sinf")
-        holder.imageview.setOnClickListener {
+        holder.textView.setText("${arrayList.get(position).classnumber}-${arrayList.get(position).classcharacters} sinf")
+        holder.imageView.setOnClickListener {
             val builder=AlertDialog.Builder(context)
             builder.setTitle("Delete Classes")
             builder.setMessage("Do you want to delete this ${arrayList.get(position).classnumber}-${arrayList.get(position).classcharacters} sinf")
@@ -37,12 +39,13 @@ class ClassAdapter constructor(
                 databaseReference2.child(arrayList.get(position).uploadkey).removeValue()
             }
             builder.setNegativeButton("No"){_,_->
-                holder.imageview.visibility=View.INVISIBLE
+                holder.imageView.visibility=View.INVISIBLE
             }
             builder.create().show()
         }
         holder.relativelay.setOnLongClickListener{
-            holder.imageview.visibility=View.VISIBLE
+
+            holder.imageView.visibility=View.VISIBLE
             return@setOnLongClickListener true
         }
         holder.relativelay.setOnClickListener {

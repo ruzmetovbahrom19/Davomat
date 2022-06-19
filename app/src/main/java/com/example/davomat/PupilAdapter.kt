@@ -28,19 +28,19 @@ class PupilAdapter constructor(
     }
 
     override fun onBindViewHolder(holder: PupilViewHolder, position: Int) {
-        holder.textview.setText("${arrayList.get(position).name} ${arrayList.get(position).surname}")
-//            holder.imageview.setOnClickListener{
-//                val builder=AlertDialog.Builder(context)
-//                builder.setTitle("Delete Pupiles")
-//                builder.setMessage("Do you want to delete this ${arrayList.get(position).name} ${arrayList.get(position).surname}")
-//                builder.setPositiveButton("Yes"){_,_->
-//                    databaseReference2.child(arrayList.get(position).uploadkey).removeValue()
-//                }
-//                builder.setNegativeButton("No"){_,_->
-//                   // holder.imageview.visibility=View.INVISIBLE
-//                }
-//                builder.create().show()
-//            }
+        holder.textView.setText("${arrayList.get(position).name} ${arrayList.get(position).surname}")
+           holder.imageView.setOnClickListener{
+                val builder=AlertDialog.Builder(context)
+                builder.setTitle("Delete Pupiles")
+                builder.setMessage("Do you want to delete this ${arrayList.get(position).name} ${arrayList.get(position).surname}")
+                builder.setPositiveButton("Yes"){_,_->
+                    databaseReference2.child(arrayList.get(position).uploadkey).removeValue()
+                }
+                builder.setNegativeButton("No"){_,_->
+                    holder.imageView.visibility=View.INVISIBLE
+                }
+                builder.create().show()
+            }
         holder.relativelay.setOnLongClickListener{
             //holder.imageview.visibility=View.VISIBLE
             return@setOnLongClickListener true
@@ -74,6 +74,7 @@ class PupilAdapter constructor(
         class PupilViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
             val relativelay=itemView.findViewById<RelativeLayout>(R.id.relativelayoutpupils)
+            val imageView=itemView.findViewById<ImageView>(R.id.imageviewdelete3)
             val textView=itemView.findViewById<TextView>(R.id.textviewpupilsname)
             val textView2=itemView.findViewById<TextView>(R.id.textviewattendance)
             val textView3=itemView.findViewById<TextView>(R.id.textviewattendance2)
