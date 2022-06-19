@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "515235266093",
+    "project_id": "maktab-867eb",
+    "storage_bucket": "maktab-867eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515235266093:android:6c463ed8db48caa79342a4",
+        "android_client_info": {
+          "package_name": "com.example.davomat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515235266093-aejo19ahe1jkcqva0484n070os7c4slc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.davomat",
+            "certificate_hash": "c7b6b02f1f0a2e92981892fa31419bd009868c05"
+          }
+        },
+        {
+          "client_id": "515235266093-8bfhq5qg3eu2oum16u8vbuegls7m78r6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYa5M4xMaADpk4x9-rWph24SX2Ri1KiEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515235266093-8bfhq5qg3eu2oum16u8vbuegls7m78r6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

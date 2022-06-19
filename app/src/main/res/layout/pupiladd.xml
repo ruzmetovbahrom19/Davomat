@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:hint="name"
+        android:id="@+id/edittextdialog3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <EditText
+        android:hint="surname"
+        android:id="@+id/edittextdialog4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <Button
+        android:id="@+id/buttondialog3"
+        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Button>
+
+</LinearLayout>

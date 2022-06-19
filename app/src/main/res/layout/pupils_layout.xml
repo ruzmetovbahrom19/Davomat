@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/relativelayoutpupils"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textviewpupilsname"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:text="Aminov Furqatbek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/boredi"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="7dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="7dp"
+                    android:id="@+id/textviewattendance"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="wrap_content"
+                    android:text="Yo'q"
+                    android:layout_height="wrap_content"></TextView>
+                <TextView
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/yoqedi"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="7dp"
+                    android:textColor="@color/white"
+                    android:paddingBottom="7dp"
+                    android:id="@+id/textviewattendance2"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="wrap_content"
+                    android:text="Bor edi"
+                    android:layout_height="wrap_content"></TextView>
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></Switch>
+            </LinearLayout>
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:id="@+id/imageviewdelete3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
